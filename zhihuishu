@@ -1,0 +1,19 @@
+from selenium import webdriver
+from time import sleep
+
+from selenium.webdriver.remote import switch_to
+
+d = webdriver.Firefox()
+url = 'https://passport.zhihuishu.com/login'
+d.get(url)
+# ----------------------------denglu---------------
+d.find_element_by_id('lUsername').send_keys('18296696042')
+d.find_element_by_id('lPassword').send_keys('anc11399232801')
+d.find_element_by_class_name('wall-sub-btn').click()
+sleep(4)
+d.find_element_by_link_text('在线学堂').click()
+# d.find_element_by_class_name('fl').click()
+sleep(3)
+d.find_element_by_xpath('/html/body/div[1]/div/div[3]/div[2]/div[1]/div[2]/div/div[1]/div[2]/ul/div/dl').click()
+d.refresh()
+
